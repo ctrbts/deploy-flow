@@ -1,0 +1,110 @@
+version: '3.8'
+
+# ==============================================================================
+# Archivo dentro de un directorio en tu VM (ej. /opt/infra-folp)
+# ==============================================================================
+
+# ==============================================================================
+# RED INTERNA AISLADA
+# ==============================================================================
+networks:
+  folp_net:
+    driver: bridge
+
+# ==============================================================================
+# VOLÚMENES PERSISTENTES
+# ==============================================================================
+volumes:
+  wg_data:
+  crowdsec_db:
+  crowdsec_config:
+  nginx_logs:
+
+services:
+  # ----------------------------------------------------------------------------
+  # 1. ACCESO VPN ADMINISTRATIVO (Zero Trust)
+  # ----------------------------------------------------------------------------
+  wg-easy:
+    image: ghcr.io/wg-easy/wg-easy:latest
+    container_name: vpn_wireguard
+    environment:
+      - WG_HOST=tu-ip-publica-o-dominio.unlp.edu.ar # IP o dominio que ve internet
+      - PASSWORD=CambiarPorUnPasswordSeguro123! # Clave para entrar a la Web UI
+      - WG_PORT=51820
+      - WG_DEFAULT_ADDRESS=10.8.0.x
+      - WG_DEFAULT_DNS=1.1.1.1,1.0.0.1
+    volumes:
+      - wg_data:/etc/wireguard
+    ports:
+      - "51820:51820/udp" # ÚNICO PUERTO ADMINISTRATIVO EXPUESTO AL MUNDO
+    networks:
+      - folp_net
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.ip_forward=1
+      - net.ipv4.conf.all.src_valid_mark=1
+
+  # ----------------------------------------------------------------------------
+  # 2. PROXY INVERSO (Nginx Puro)
+  # ----------------------------------------------------------------------------
+  nginx:
+    image: nginx:alpine
+    container_name: proxy_nginx
+    ports:
+      - "80:80"   # Redirección a HTTPS
+      - "443:443" # Tráfico legítimo de apps
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro # Configuraciones de solo lectura
+      - ./nginx/ssl:/etc/nginx/ssl:ro       # Certificados SSL
+      - nginx_logs:/var/log/nginx           # Logs compartidos con CrowdSec
+    networks:
+      - folp_net
+    restart: unless-stopped
+    depends_on:
+      - backend_django
+      - api_node
+
+  # ----------------------------------------------------------------------------
+  # 3. MOTOR DE SEGURIDAD E IPS (CrowdSec)
+  # ----------------------------------------------------------------------------
+  crowdsec:
+    image: crowdsecurity/crowdsec:latest
+    container_name: security_crowdsec
+    environment:
+      - COLLECTIONS=crowdsecurity/nginx
+    volumes:
+      - crowdsec_db:/var/lib/crowdsec/data
+      - crowdsec_config:/etc/crowdsec
+      - nginx_logs:/var/log/nginx:ro # CrowdSec lee los logs de Nginx para cazar atacantes
+    networks:
+      - folp_net
+    restart: unless-stopped
+
+  # ----------------------------------------------------------------------------
+  # 4. APLICACIONES DE NEGOCIO (Esqueletos)
+  # ----------------------------------------------------------------------------
+  backend_django:
+    build: 
+      context: ./apps/django
+      dockerfile: Dockerfile
+    container_name: app_django
+    expose:
+      - "8000" # No se mapea al host, solo Nginx puede hablarle
+    networks:
+      - folp_net
+    restart: unless-stopped
+    # command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+
+  api_node:
+    build:
+      context: ./apps/node
+      dockerfile: Dockerfile
+    container_name: app_node
+    expose:
+      - "3000" # No se mapea al host, solo Nginx puede hablarle
+    networks:
+      - folp_net
+    restart: unless-stopped

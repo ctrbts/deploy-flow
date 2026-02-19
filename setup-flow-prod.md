@@ -1,10 +1,6 @@
-Aquí tienes el script `setup_server.sh` diseñado específicamente para tu flujo **Radix Flow**.
-
-Este script es la pieza clave para eliminar la fricción: convierte un contenedor LXC "vacío" (recién creado en Proxmox) en un servidor de producción listo, instalando dependencias, configurando PostgreSQL, Nginx, Gunicorn y permisos.
-
 ### Instrucciones previas
 
-Guarda este archivo en tu repositorio dentro de la carpeta: `deploy/setup_server.sh`.
+Este script es la pieza clave para eliminar la fricción: convierte un contenedor LXC "vacío" (recién creado en Proxmox) en un servidor de producción listo, instalando dependencias, configurando PostgreSQL, Nginx, Gunicorn y permisos.
 
 ### El Script (`deploy/setup_server.sh`)
 
@@ -12,9 +8,8 @@ Guarda este archivo en tu repositorio dentro de la carpeta: `deploy/setup_server
 #!/bin/bash
 
 # ==============================================================================
-# BLUEPRINT DE DESPLIEGUE - RADIX FLOW
 # Script de configuración inicial para LXC (Ubuntu 24.04)
-# Autor: Tu Nombre / Cuatrobits
+# Autor: Fernando Merlo / ssh -L 5001:localhost:5001 tu_usuario@ip_de_la_vm
 # ==============================================================================
 
 # Detener el script si hay errores
@@ -157,13 +152,15 @@ echo -e "3. Verifica el estado con: systemctl status gunicorn"
 El flujo para un despliegue desde cero en un LXC nuevo sería:
 
 1. **En tu PC (Desarrollo):**
+
 * Asegúrate de que `setup_server.sh` esté en la carpeta `deploy/` del repo.
 * Edita las variables al inicio del script (`PROJECT_NAME`, `DB_NAME`, etc.) y haz commit.
 
+1. **En el Servidor (LXC Proxmox):**
 
-2. **En el Servidor (LXC Proxmox):**
 * Entra por SSH.
 * Clona tu repositorio en `/var/www/` (o donde prefieras):
+
 ```bash
 mkdir -p /var/www
 cd /var/www
@@ -172,24 +169,20 @@ cd tu-proyecto
 
 ```
 
-
 * Dale permisos de ejecución al script y córrelo:
+
 ```bash
 chmod +x deploy/setup_server.sh
 sudo ./deploy/setup_server.sh
 
 ```
 
+1. **Resultado:**
 
-
-
-3. **Resultado:**
 * El script instalará todo.
 * Creará la base de datos PostgreSQL.
 * Configurará Nginx y Gunicorn.
 * Tu sitio estará online.
-
-
 
 ### Detalles Técnicos Importantes
 

@@ -1,5 +1,5 @@
 
-# Blueprint de Desarrollo y Despliegue Django en LXC (Radix Flow)
+# Blueprint de Desarrollo y Despliegue Django en LXC
 
 Este documento tiene como objetivo eliminar la fricción, automatizar lo repetitivo y asegurar que el paso de Desarrollo (SQLite) a Producción (PostgreSQL) sea robusto.
 
