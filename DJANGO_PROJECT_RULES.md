@@ -1,4 +1,4 @@
-# 🛠 REGLAS DE DESARROLLO: [NOMBRE_PROYECTO]
+# 🛠 REGLAS DE DESARROLLO DEL PROYECTO
 
 ## 1. EL ORÁCULO (ADR & SPECS) - PRIORIDAD MÁXIMA
 Antes de proponer cualquier cambio estructural o funcional, el agente DEBE:
@@ -7,7 +7,7 @@ Antes de proponer cualquier cambio estructural o funcional, el agente DEBE:
 3.  **Protocolo de Discrepancia**: Si mi orden contradice un ADR existente, el agente debe señalar la contradicción y preguntar si se desea crear un nuevo ADR para sobrescribir el anterior.
 
 ## 2. TECH STACK (Greenfield)
-- **Backend:** Python 3.12+ / Django 5.x.
+- **Backend:** Python 3.12+ / Django 6.x.
 - **Frontend:** Django Templates + HTMX (siguiendo ADR-001) + Tailwind CSS.
 - **Base de Datos:** PostgreSQL (Producción) / SQLite (Desarrollo).
 - **Testing:** Pytest-django para unitarios e integración.
