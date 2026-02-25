@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusIA - Humanos Digitales para Atención al Cliente</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Importación de la fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Establecer Inter como la fuente principal */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Pequeño efecto de "brillo" en el gradiente para un toque moderno */
+        .hero-gradient {
+            background: linear-gradient(135deg, #1D4ED8 0%, #7E22CE 100%);
+        }
+
+        .cta-gradient {
+            background: linear-gradient(90deg, #1D4ED8 0%, #7E22CE 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- Contenedor Principal -->
+    <div class="overflow-x-hidden">
+
+        <!-- Barra de Navegación -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="#" class="text-2xl font-bold">
+                            <span class="text-blue-700">Nexus</span><span class="text-purple-600">IA</span>
+                        </a>
+                    </div>
+
+                    <!-- Navegación de Escritorio -->
+                    <nav class="hidden md:flex md:space-x-8">
+                        <a href="#servicios" class="font-medium text-gray-600 hover:text-blue-700">Servicios</a>
+                        <a href="#como-funciona" class="font-medium text-gray-600 hover:text-blue-700">Cómo Funciona</a>
+                        <a href="#precios" class="font-medium text-gray-600 hover:text-blue-700">Precios</a>
+                        <a href="#contacto" class="font-medium text-gray-600 hover:text-blue-700">Contacto</a>
+                    </nav>
+
+                    <!-- Botón CTA -->
+                    <div class="hidden md:block">
+                        <a href="#contacto"
+                            class="inline-block cta-gradient text-white font-medium py-2 px-5 rounded-lg shadow-lg hover:opacity-90 transition-opacity">
+                            Agendar Demo
+                        </a>
+                    </div>
+
+                    <!-- Botón de Menú Móvil (se puede agregar JS para funcionalidad) -->
+                    <div class="md:hidden">
+                        <button class="text-gray-700 focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sección Hero -->
+        <main>
+            <section class="relative bg-gray-50 overflow-hidden">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 md:pt-28 md:pb-32">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <!-- Contenido de Texto -->
+                        <div>
+                            <span
+                                class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Innovación
+                                en Atención al Cliente</span>
+                            <h1
+                                class="mt-4 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                                Tus clientes merecen un
+                                <span class="hero-gradient text-transparent bg-clip-text">Humano Digital</span>
+                            </h1>
+                            <p class="mt-6 text-lg text-gray-600 max-w-lg">
+                                Entrenamos agentes de IA con personalidades únicas para gestionar tu WhatsApp, Telegram
+                                y Redes Sociales. No son bots, son la voz de tu marca, 24/7.
+                            </p>
+                            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                                <a href="#contacto"
+                                    class="inline-block w-full sm:w-auto cta-gradient text-white font-medium py-3 px-8 rounded-lg shadow-xl text-center text-lg hover:opacity-90 transition-opacity">
+                                    Solicitar una Demo
+                                </a>
+                                <a href="#servicios"
+                                    class="inline-block w-full sm:w-auto bg-gray-200 text-gray-700 font-medium py-3 px-8 rounded-lg text-center text-lg hover:bg-gray-300 transition-colors">
+                                    Ver Servicios
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Imagen/Visual -->
+                        <div class="relative">
+                            <img src="https://placehold.co/600x450/7E22CE/FFFFFF?text=Simulación+de+Chat+IA&font=inter"
+                                alt="Simulación de un chat de atención al cliente con un agente de inteligencia artificial en un teléfono"
+                                class="rounded-2xl shadow-2xl relative z-10">
+                            <!-- Elementos decorativos (Refleja la sinergia) -->
+                            <div
+                                class="absolute -top-8 -left-8 w-32 h-32 bg-blue-200 rounded-full opacity-50 filter blur-xl">
+                            </div>
+                            <div
+                                class="absolute -bottom-8 -right-8 w-40 h-40 bg-purple-200 rounded-full opacity-50 filter blur-xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Servicios (Features) -->
+            <section id="servicios" class="py-20 md:py-28 bg-white">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+                            El Agente IA que tu marca necesita
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                            Combinamos tecnología robusta con la creatividad de un influencer para crear experiencias de
+                            cliente inolvidables.
+                        </p>
+                    </div>
+
+                    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Tarjeta 1: WhatsApp y Telegram -->
+                        <div
+                            class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300">
+                            <div
+                                class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600">
+                                <!-- Icono SVG: Chat -->
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="mt-5 text-xl font-bold text-gray-900">Atención 24/7 en Mensajería</h3>
+                            <p class="mt-2 text-base text-gray-600">
+                                Tu humano digital responde al instante en WhatsApp y Telegram, resolviendo dudas,
+                                agendando citas y cerrando ventas, sin importar la hora.
+                            </p>
+                        </div>
+
+                        <!-- Tarjeta 2: Redes Sociales -->
+                        <div
+                            class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300">
+                            <div
+                                class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 text-purple-600">
+                                <!-- Icono SVG: Redes Sociales/Tendencia -->
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="mt-5 text-xl font-bold text-gray-900">Gestión de Redes Sociales</h3>
+                            <p class="mt-2 text-base text-gray-600">
+                                Desde responder comentarios hasta crear publicaciones virales. Tu agente IA entiende las
+                                tendencias y habla el idioma de tu comunidad.
+                            </p>
+                        </div>
+
+                        <!-- Tarjeta 3: Entrenamiento y Personalidad -->
+                        <div
+                            class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300">
+                            <div
+                                class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600">
+                                <!-- Icono SVG: Cerebro/IA -->
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="mt-5 text-xl font-bold text-gray-900">Personalidad de Marca</h3>
+                            <p class="mt-2 text-base text-gray-600">
+                                No usamos plantillas. Entrenamos a tu humano digital para que suene como tú, con tu
+                                humor, tus valores y tu conocimiento experto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Cómo Funciona (Sencillo para no-técnicos) -->
+            <section id="como-funciona" class="py-20 md:py-28 bg-gray-50">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+                            Lanzar tu Agente IA es muy fácil
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Nos encargamos de toda la complejidad técnica. Tú solo disfruta los resultados.
+                        </p>
+                    </div>
+
+                    <!-- Proceso en 3 pasos -->
+                    <div class="mt-16 space-y-12">
+                        <!-- Paso 1 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div
+                                class="flex-shrink-0 w-16 h-16 rounded-full hero-gradient text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                                1</div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg flex-1">
+                                <h3 class="text-xl font-bold text-gray-900">Análisis y Estrategia</h3>
+                                <p class="mt-2 text-gray-600">Nos reunimos contigo para entender la voz de tu marca.
+                                    Analizamos tu experiencia (el lado "pro") y tu estilo de comunicación (el lado
+                                    "influencer").</p>
+                            </div>
+                        </div>
+                        <!-- Paso 2 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div
+                                class="flex-shrink-0 w-16 h-16 rounded-full hero-gradient text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                                2</div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg flex-1">
+                                <h3 class="text-xl font-bold text-gray-900">Entrenamiento y Calibración</h3>
+                                <p class="mt-2 text-gray-600">Construimos el "cerebro" de tu agente. Lo alimentamos con
+                                    tu base de conocimiento y lo entrenamos en escenarios reales hasta que suene
+                                    perfecto.</p>
+                            </div>
+                        </div>
+                        <!-- Paso 3 -->
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div
+                                class="flex-shrink-0 w-16 h-16 rounded-full hero-gradient text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                                3</div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg flex-1">
+                                <h3 class="text-xl font-bold text-gray-900">Lanzamiento e Integración</h3>
+                                <p class="mt-2 text-gray-600">Conectamos tu humano digital a WhatsApp, Telegram e
+                                    Instagram. ¡Listo! Empieza a interactuar con tus clientes 24/7.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Sinergia (El punto clave de la solicitud) -->
+            <section class="py-20 md:py-28 bg-gray-900 text-white">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <span
+                                class="inline-block bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">La
+                                Sinergia Perfecta</span>
+                            <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
+                                Experiencia TI + Frescura Digital
+                            </h2>
+                            <p class="mt-6 text-lg text-gray-300">
+                                No somos solo programadores ni solo creativos. Somos el puente entre la tecnología de
+                                punta y la comunicación humana real.
+                            </p>
+                        </div>
+                        <div class="space-y-6">
+                            <!-- Lado "IT Pro" -->
+                            <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-blue-300">El Núcleo Experimentado</h3>
+                                <p class="mt-2 text-gray-300">Nuestra base tecnológica garantiza seguridad,
+                                    escalabilidad y una integración robusta con tus sistemas. Sin fallos, sin caídas.
+                                </p>
+                            </div>
+                            <!-- Lado "Influencer" -->
+                            <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-purple-300">La Chispa Creativa</h3>
+                                <p class="mt-2 text-gray-300">Nuestros expertos en tendencias se aseguran de que tu IA
+                                    no solo responda, sino que conecte, entretenga y construya comunidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Precios (Simple y directa) -->
+            <section id="precios" class="py-20 md:py-28 bg-white">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+                            Planes para cada etapa de tu negocio
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Empieza gratis y escala a medida que tu éxito crece.
+                        </p>
+                    </div>
+
+                    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Plan Básico -->
+                        <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900">Starter</h3>
+                            <p class="mt-2 text-gray-600">Para startups y creadores.</p>
+                            <div class="mt-4">
+                                <span class="text-4xl font-extrabold text-gray-900">$99</span>
+                                <span class="text-base font-medium text-gray-500">/mes</span>
+                            </div>
+                            <ul class="mt-6 space-y-3">
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg> 1 Canal (WhatsApp o Tel.)</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg> 5,000 interacciones</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>Entrenamiento Básico</li>
+                            </ul>
+                            <a href="#contacto" class="mt-auto pt-4">
+                                <span
+                                    class="block w-full text-center bg-gray-100 text-gray-700 font-medium py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors">
+                                    Empezar Ahora
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Plan Pro (Destacado) -->
+                        <div class="relative border-4 border-blue-600 rounded-2xl p-8 flex flex-col shadow-2xl">
+                            <span
+                                class="absolute top-0 -translate-y-1/2 bg-blue-600 text-white text-xs font-semibold px-4 py-1 rounded-full uppercase tracking-wider">Más
+                                Popular</span>
+                            <h3 class="text-xl font-bold text-blue-600">Pro</h3>
+                            <p class="mt-2 text-gray-600">Para negocios en crecimiento.</p>
+                            <div class="mt-4">
+                                <span class="text-4xl font-extrabold text-gray-900">$249</span>
+                                <span class="text-base font-medium text-gray-500">/mes</span>
+                            </div>
+                            <ul class="mt-6 space-y-3">
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg> 3 Canales (WhatsApp, Tel., IG)</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg> 20,000 interacciones</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg> Entrenamiento de Personalidad</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg> Reportes Avanzados</li>
+                            </ul>
+                            <a href="#contacto" class="mt-auto pt-4">
+                                <span
+                                    class="block w-full text-center cta-gradient text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:opacity-90 transition-opacity">
+                                    Elegir Pro
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Plan Empresa -->
+                        <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900">Enterprise</h3>
+                            <p class="mt-2 text-gray-600">Para operaciones a gran escala.</p>
+                            <div class="mt-4">
+                                <span class="text-4xl font-extrabold text-gray-900">Hablemos</span>
+                            </div>
+                            <ul class="mt-6 space-y-3">
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg> Canales Ilimitados</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg> Integración API y CRM</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2"
+                                        fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg> Soporte 24/7 dedicado</li>
+                            </ul>
+                            <a href="#contacto" class="mt-auto pt-4">
+                                <span
+                                    class="block w-full text-center bg-gray-100 text-gray-700 font-medium py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors">
+                                    Contactar Ventas
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Final / Formulario de Contacto -->
+            <section id="contacto" class="hero-gradient">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                        ¿Listo para crear tu Humano Digital?
+                    </h2>
+                    <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">
+                        Agenda una demo gratuita de 15 minutos. Te mostraremos cómo un agente IA puede transformar tu
+                        comunicación y empezar a trabajar para ti en menos de 48 horas.
+                    </p>
+
+                    <!-- Formulario Sencillo -->
+                    <form class="mt-10 max-w-lg mx-auto">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="nombre" class="sr-only">Nombre</label>
+                                <input type="text" id="nombre" placeholder="Tu Nombre"
+                                    class="block w-full rounded-lg py-3 px-4 shadow-sm focus:ring-purple-500 focus:border-purple-500 border-gray-300">
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" id="email" placeholder="Tu Email"
+                                    class="block w-full rounded-lg py-3 px-4 shadow-sm focus:ring-purple-500 focus:border-purple-500 border-gray-300">
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label for="mensaje" class="sr-only">Mensaje</label>
+                            <textarea id="mensaje" rows="4" placeholder="Cuéntanos sobre tu negocio..."
+                                class="block w-full rounded-lg py-3 px-4 shadow-sm focus:ring-purple-500 focus:border-purple-500 border-gray-300"></textarea>
+                        </div>
+                        <div class="mt-6">
+                            <button type="submit"
+                                class="w-full sm:w-auto inline-block bg-white text-blue-700 font-bold py-3 px-10 rounded-lg shadow-xl text-lg hover:bg-gray-100 transition-colors">
+                                Agendar mi Demo
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-400">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center md:text-left">
+                        <a href="#" class="text-2xl font-bold">
+                            <span class="text-blue-400">Nexus</span><span class="text-purple-400">IA</span>
+                        </a>
+                        <p class="mt-2 text-sm">La sinergia entre IA y humanidad.</p>
+                    </div>
+                    <nav class="mt-6 md:mt-0 flex gap-6">
+                        <a href="#servicios" class="text-sm hover:text-white">Servicios</a>
+                        <a href="#como-funciona" class="text-sm hover:text-white">Cómo Funciona</a>
+                        <a href="#precios" class="text-sm hover:text-white">Precios</a>
+                        <a href="#" class="text-sm hover:text-white">Privacidad</a>
+                    </nav>
+                </div>
+                <div class="mt-8 border-t border-gray-700 pt-8 text-center text-sm">
+                    <p>&copy; 2025 NexusIA. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
